@@ -1,0 +1,90 @@
+.content {
+    background-color: #093545;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    font-family: Lexend Deca, sans-serif;
+
+}
+.h1{
+  margin-bottom: 39px;
+  font-size: 64px;  
+  line-height: 80px;
+}
+.p{
+    width: 334px;
+    height: 20px;
+    margin-bottom: 36px;
+    font-size: 16px;
+    line-height: 20px; 
+    text-align: center;
+    
+}
+.input{
+    background: #224957;
+    border-radius: 10px;
+    width: 300px;
+    height: 45px;
+    border: 1px solid #224957;
+    margin-bottom: 32px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    outline: none;
+    padding: 0 10px;
+    color: #fff;
+}
+::placeholder{
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+}
+.password{
+    margin-bottom: 24px;
+}
+.buttonHome{
+    width: 300px;
+    height: 45px;   
+    background: #20DF7F;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 1px solid #20DF7F;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0;
+}
+.buttonHome:hover{
+    background: #48d38d;
+    transform: scale(1.02);
+}
+.error{
+    font-size: 11px;
+    color: red;
+    position: absolute;
+    margin-top: 311px;
+}
+.link{
+    text-decoration: none;
+    margin-bottom: 18px;
+    color: #fff;
+
+}
+.imgPass{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 6px;
+    top: 7px;
+    cursor: pointer;
+}
+.contentPass{
+    position: relative;
+}
