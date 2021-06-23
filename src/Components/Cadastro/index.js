@@ -1,8 +1,9 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import './styles.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { RiArrowGoBackFill } from 'react-icons/ri';
 import Cadastrar from '../../Services/cadastrar';
+import firebase from 'firebase/app'
 
 export default function Cadastro() {
     
@@ -11,8 +12,9 @@ export default function Cadastro() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirm, setConfirm] = useState('')
-    const [response, setResponse] = useState({})
     const navigate = useNavigate()
+    const db = firebase.firestore()
+    const [user, setUser] = useState({name, email, password})
 
     const validate = () => {
         
@@ -25,22 +27,16 @@ export default function Cadastro() {
 
 
     const sendNewUser = async () => {
+            const result = await firebase.auth().createUserWithEmailAndPassword(email,password)
+            .then(function(result) {
+                console.log('updating')
+                return result.user.updateProfile({
+                  displayName: name
+                })
+              }).catch(function(error) {
+                console.log(error);
+              });
 
-            const response = await Cadastrar({
-                name,
-                email,
-                password,
-            })
-            console.log(response)
-            
-            if(response.token){
-                alert('Usuário criado com sucesso')
-                return navigate('/')
-            }else{
-
-                return alert(response.error)
-            }
-        
     }
 
 

@@ -59,7 +59,7 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    margin: 0;
+    margin-bottom: 30px;
 }
 .buttonHome:hover{
     background: #48d38d;
